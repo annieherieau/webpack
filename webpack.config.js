@@ -9,6 +9,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // Ici, tu peux écrire les différentes options que tu souhaites, et dire à Webpack quoi faire.
 module.exports = {
 
+  // watch mode: Webpack can watch files and recompile whenever they change
+  // https://webpack.js.org/configuration/watch/
+  watch: true,
+  watchOptions: {
+    poll: 1000, // Check for changes every second
+    ignored: /node_modules/,
+  },
+
   // Ceci est le chemin vers le "point d'entrée" de ton app.
   // C'est depuis ce fichier que Webpack commencera à travailler.
   entry: './src/index.js',
