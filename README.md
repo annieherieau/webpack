@@ -1,5 +1,4 @@
 # webpack template
-
 ## Installation
 
 Clone repository
