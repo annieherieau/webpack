@@ -1,0 +1,14 @@
+// Variables
+$color-red: rgb(255, 20, 20);
+
+// fonts
+@font-face {
+  font-family: 'Big Noodles';
+  src: url('../assets/fonts/big_noodle_titling.ttf');
+}
+
+// Balises
+h1 {
+  color: $color-red;
+  font-family: 'Big Noodles';
+}
