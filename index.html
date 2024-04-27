@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Webpack -->
-  <link rel="stylesheet" href="./dist/bundle.css" />
-  <title>WebPack Template</title>
-</head>
-<body>
-  <h1>hello World</h1>
-  
-  <!-- Webpack -->
-  <script src="./dist/bundle.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Webpack -->
+    <link rel="stylesheet" href="./dist/bundle.css" />
+    <title>WebPack Template</title>
+  </head>
+  <body>
+    <main class="container py-4 px-3 mx-auto">
+      <h1>hello World</h1>
+      <button class="btn btn-primary">Test Primary button</button>
+      <div class="alert alert-dismissible alert-danger">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Test bootstrap JS</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+      </div>
+    </main>
+    <!-- Webpack -->
+    <script src="./dist/bundle.js"></script>
+  </body>
 </html>
