@@ -1,7 +1,7 @@
 import './style/index.scss'; // Sass
 
 // Import all of Bootstrap's JS
-import * as bootstrap from 'bootstrap'
+import * as bootstrap from 'bootstrap';
 
 /*
 // You can also import JavaScript plugins individually as needed to keep bundle
