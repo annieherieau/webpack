@@ -1,5 +1,8 @@
+'use strict'
 // Webpack utilise ce module Node.js pour travailler avec les dossiers.
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const autoprefixer = require('autoprefixer')
 // plugin qui génère le bundle.css
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // plus de plugins : https://webpack.js.org/awesome-webpack/
@@ -64,6 +67,13 @@ module.exports = {
             // Ensuite on utilise le loader de postCSS, qui ajoutera un minifier par exemple,
             // ou bien un préfixeur automatique des règles CSS (--moz par exemple)
             loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  autoprefixer
+                ]
+              }
+            }
           },
           {
             // En premier, on transforme le SASS en CSS :
@@ -76,8 +86,17 @@ module.exports = {
       },
       // gestion des images
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         type: 'asset/resource',
+      },
+      // SVG
+      {
+        mimetype: 'image/svg+xml',
+        scheme: 'data',
+        type: 'asset/resource',
+        generator: {
+          filename: 'icons/[hash].svg'
+        }
       },
       // gestion des fonts
       {
@@ -89,9 +108,10 @@ module.exports = {
 
   // plugins installés
   plugins: [
+    new HtmlWebpackPlugin({ template: './index.html' }),
     new MiniCssExtractPlugin({
       filename: 'bundle.css',
-    }),
+    }), 
   ],
 
   // Par défaut, le mode de Webpack est "production". En fonction de ce qui est
