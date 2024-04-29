@@ -1,5 +1,5 @@
 # webpack template
-with bootstrap
+with bootstrap + Dotenv
 
 ## Installation
 
